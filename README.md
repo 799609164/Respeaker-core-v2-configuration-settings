@@ -41,7 +41,7 @@
   * eyed3: `sudo pip3 install eyed3`<br>
   * pydub: `sudo pip3 install pydub`(需ffmpeg支持，安装：`sudo apt-get install ffmpeg`) <br>
 
-#FAQs  
+# FAQs  
 1.ssh连接出错：删除`/home/xy/.ssh/known_hosts`中的内容
 
 2.无法显示PyQt5界面：`ssh　respeaker@192.168.xxx.xxx -X`
