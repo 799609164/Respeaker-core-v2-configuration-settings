@@ -1,22 +1,22 @@
 # Respeaker-core-v2-configuration-settings
 配置respeaker core v2开发板，包括基本设置及Python库的安装
 ----------------------------------------------------
-1.连接wifi：`sudo nmtui`
+1.连接wifi：<br>`sudo nmtui`
 
-2.查看ip：`ip addr`
+2.查看ip：<br>`ip addr`
 
 3.`sudo apt-get update`
 
 4.`sudo apt-get upgrade`
 
-5.更改系统时区：`udo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime`
+5.更改系统时区：<br>`sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime`
 
-6.更换apt清华源：
-  a.`sudo apt install apt-transport-https`<br>
-  b.`cd /etc/apt`<br>
-  c.`sudo cp -p sources.list sources.list.old`<br>
-  d.`sudo vim sources.list`<br>
-  e.将sources.list内容更换为:<br>
+6.更换apt清华源：<br>
+  * `sudo apt install apt-transport-https`<br>
+  * `cd /etc/apt`<br>
+  * `sudo cp -p sources.list sources.list.old`<br>
+  * `sudo vim sources.list`<br>
+  * 将sources.list内容更换为:<br>
   (在清华源网站上https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/ 找到对应版本的清华源，将sources.list当中的内容进行替换。)<br>
     # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释<br>
     deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main contrib non-free<br>
@@ -27,7 +27,7 @@
     # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main contrib non-free<br>
     deb https://mirrors.tuna.tsinghua.edu.cn/debian-security stretch/updates main contrib non-free<br>
     # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security stretch/updates main contrib non-free<br>
-  f.`sudo apt-get update`<br>
+  * `sudo apt-get update`<br>
 
 7.Python库安装
   * PyAudio: `sudo apt install python3-pyaudio`<br>
