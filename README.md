@@ -17,8 +17,7 @@
   * `sudo cp -p sources.list sources.list.old`<br>
   * `sudo vim sources.list`<br>
   * 将sources.list内容更换为:<br>
-  (在清华源网站上https://mirror.tuna.tsinghua.edu.cn/help/debian/ 找到对应版本的清华源，将sources.list当中的内容进行替换。)<br>
-  <br>
+  (在清华源网站上https://mirror.tuna.tsinghua.edu.cn/help/debian/ 找到对应版本的清华源)<br>
    #默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释<br>
    deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main contrib non-free<br>
    #deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main contrib non-free<br>
