@@ -1,17 +1,17 @@
 # Respeaker-core-v2-configuration-settings
 配置respeaker core v2开发板，包括基本设置及Python库的安装
 ----------------------------------------------------
-1.连接wifi：sudo nmtui
+##1.连接wifi：sudo nmtui
 
-2.查看ip：ip addr
+##2.查看ip：ip addr
 
-3.sudo apt-get update
+##3.sudo apt-get update
 
-4.sudo apt-get upgrade
+##4.sudo apt-get upgrade
 
-5.更改系统时区：sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+##5.更改系统时区：sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-6.更换apt清华源：
+##6.更换apt清华源：
   a.sudo apt install apt-transport-https
   b.cd /etc/apt
   c.sudo cp -p sources.list sources.list.old
@@ -29,7 +29,7 @@
     # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security stretch/updates main contrib non-free
   f.sudo apt-get update
 
-7.Python库安装
+##7.Python库安装
   a.PyAudio: sudo apt install python3-pyaudio
   b.PyQt5: sudo apt-get install python3-pyqt5
   c.numpy: sudo apt-get install python3-numpy
@@ -41,6 +41,6 @@
   i.eyed3: sudo pip3 install eyed3
   j.pydub: sudo pip3 install pydub(需ffmpeg支持，安装：sudo apt-get install ffmpeg) 
   
-8.ssh连接出错：删除　/home/xy/.ssh/known_hosts
+##8.ssh连接出错：删除　/home/xy/.ssh/known_hosts
 
-9.无法显示界面：ssh　respeaker@192.168.xxx.xxx -X
+##9.无法显示界面：ssh　respeaker@192.168.xxx.xxx -X
