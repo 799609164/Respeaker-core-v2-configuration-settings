@@ -26,7 +26,7 @@
    `deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main contrib non-free`<br>
    `#deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main contrib non-free`<br>
    `deb https://mirrors.tuna.tsinghua.edu.cn/debian-security stretch/updates main contrib non-free`<br>
-   `#deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security stretch/updates main contrib non-free`<br>`
+   `#deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security stretch/updates main contrib non-free`<br>
   * `sudo apt-get update`<br>
 
 7.Python库安装
