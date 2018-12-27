@@ -1,17 +1,19 @@
 # Respeaker_Core_V2
 配置respeaker core v2开发板，包括基本设定及Python库的安装
 ----------------------------------------------------
-1.连接wifi： `sudo nmtui`
+1.串口通信：<br>
+ `ls /dev/ttyACM*`<br>
+ `sudo minicom -s`
 
-2.查看ip： `ip addr`
+2.连接wifi： `sudo nmtui`
 
-3.`sudo apt-get update`
+3.查看ip： `ip addr`
 
-4.`sudo apt-get upgrade`
+4.<br>`sudo apt-get update`<br> `sudo apt-get upgrade`
 
 5.更改系统时区： `sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime`
 
-6.更换apt清华源：<br>
+6.更换apt清华源(换源有风险换前需谨慎)：<br>
   * `sudo apt install apt-transport-https`<br>
   * `cd /etc/apt`<br>
   * `sudo cp -p sources.list sources.list.old`<br>
@@ -40,12 +42,22 @@
   * simplejson: `sudo apt-get install python3-simplejson`<br>
   * eyed3: `sudo pip3 install eyed3`<br>
   * pydub: `sudo pip3 install pydub`(需ffmpeg支持，安装：`sudo apt-get install ffmpeg`) <br>
+  * evdev: `sudp pip3 install evdev`<br>
 
-# FAQs  
-1.ssh连接出错：删除`/home/xy/.ssh/known_hosts`中的内容
+8.系统备份:`sudo dd if=/dev/sdc of=Desktop/respeaker.img bs=4MB`<br>
+
+# FAQs
+1.ssh连接失败：删除`/home/xy/.ssh/known_hosts`中的内容
 
 2.无法显示PyQt5界面：`ssh　respeaker@192.168.xxx.xxx -X`
 
+3.sudo python3情况下无法导入模块:<br>
+  * `sudo vim /etc/sudoers`<br>
+  * 注释掉`Defaults    env_reset`<br>
+  * 添加<br>
+  `Defaults    env_keep += "PYTHONPATH"`<br>
+  `Defaults    env_keep += "/home/respeaker/model/pyAudioAnalysis"`<br>
+ 
 [PyAudioAnalysis库](https://github.com/tyiannak/pyAudioAnalysis)
 
 ![](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1544368789184&di=062d69406e794ae6d836b7ca387a6563&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%3D580%2Fsign%3D3d21336dfb039245a1b5e107b795a4a8%2F277603d3d539b600c41cca17ee50352ac45cb7fd.jpg)  
