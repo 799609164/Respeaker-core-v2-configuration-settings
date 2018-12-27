@@ -1,7 +1,7 @@
 # Respeaker_Core_V2
 配置respeaker core v2开发板，包括基本设定及Python库的安装
 ----------------------------------------------------
-1.串口通信：<br>
+1.Linux串口通信：<br>
  `ls /dev/ttyACM*`<br>
  `sudo minicom -s`
 
