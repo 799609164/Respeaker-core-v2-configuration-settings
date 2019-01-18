@@ -3,7 +3,7 @@
 ----------------------------------------------------
 1.Linux串口通信：<br>
  `ls /dev/ttyACM*`<br>
- `sudo minicom -s`
+ `sudo minicom -s`或者`sudo screen /dev/ttyACM*  115200`
 
 2.连接wifi： `sudo nmtui`
 
@@ -46,6 +46,46 @@
 
 8.系统备份:`sudo dd if=/dev/sdc of=Desktop/respeaker.img bs=4MB`<br>
 
+9.设置python程序自启动
+* 新增文件：`sudo vim /etc/systemd/system/rc-local.service`<br>
+	 文件内容<br>
+ `[Unit]`<br>
+`Description=/etc/rc.local`<br>
+`ConditionPathExists=/etc/rc.local`<br>
+
+	`[Service]`<br>
+`Type=forking`<br>
+`ExecStart=/etc/rc.local start`<br>
+`TimeoutSec=0`<br>
+`StandardOutput=tty`<br>
+`RemainAfterExit=yes`<br>
+`SysVStartPriority=99`<br>
+ 
+	`[Install]`<br>
+`WantedBy=multi-user.target`<br>
+* 新增文件:`sudo vim /etc/rc.local`<br>
+  文件内容<br>
+ `#!/bin/sh -e`<br>
+  `#`<br>
+  `# rc.local`<br>
+  `#`<br>
+  `# This script is executed at the end of each multiuser runlevel.`<br>
+  `# Make sure that the script will "exit 0" on success or any other`<br>
+  `# value on error.`<br>
+  `#`<br>
+  `# In order to enable or disable this script just change the execution`<br>
+  `# bits.`<br>
+  `#`<br>
+  `# By default this script does nothing.`<br>
+
+  `sudo /usr/bin/python3 /home/respeaker/recorder/*.py`<br>
+  `exit 0`<br>
+  
+ * 添加权限:`chmod +x /etc/rc.local`
+ * 设置到系统启动:`systemctl enable rc-local`
+ * 启动脚本:`systemctl start rc-local.service`
+ * 查看服务状态:`systemctl status rc-local.service`
+  
 # FAQs
 1.ssh连接失败：删除`/home/xy/.ssh/known_hosts`中的内容
 
