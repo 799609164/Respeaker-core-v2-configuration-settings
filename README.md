@@ -79,12 +79,13 @@
   `# By default this script does nothing.`<br>
 
   `sudo /usr/bin/python3 /home/respeaker/recorder/*.py`<br>
+  `export PYTHONPATH=$PYTHONPATH:"/home/respeaker/model/pyAudioAnalysis"`<br>
   `exit 0`<br>
   
- * 添加权限:`chmod +x /etc/rc.local`
- * 设置到系统启动:`systemctl enable rc-local`
- * 启动脚本:`systemctl start rc-local.service`
- * 查看服务状态:`systemctl status rc-local.service`
+ * 添加权限:`sudo chmod +x /etc/rc.local`
+ * 设置到系统启动:`sudo systemctl enable rc-local`
+ * 启动脚本:`sudo systemctl start rc-local.service`
+ * 查看服务状态:`sudo systemctl status rc-local.service`
   
 # FAQs
 1.ssh连接失败：删除`/home/xy/.ssh/known_hosts`中的内容
