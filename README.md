@@ -3,7 +3,8 @@
 ----------------------------------------------------
 1.Linux串口通信：<br>
  `ls /dev/ttyACM*`<br>
- `sudo minicom -s`或者`sudo screen /dev/ttyACM*  115200`
+ `sudo minicom -s`　选择`Serial port setup`进行配置<br>
+ 或者`sudo screen /dev/ttyACM*  115200`
 
 2.连接wifi： `sudo nmtui`
 
@@ -13,7 +14,11 @@
 
 5.更改系统时区： `sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime`
 
-6.更换apt清华源(换源有风险换前需谨慎)：<br>
+6.修改主机名：<br>
+`sudo vim /etc/hosts`　添加　`127.0.0.1　localhsot 修改的主机名`<br>
+`sudo vim /etc/hostname`　修改主机名
+
+7.更换apt清华源(换源有风险换前需谨慎)：<br>
   * `sudo apt install apt-transport-https`<br>
   * `cd /etc/apt`<br>
   * `sudo cp -p sources.list sources.list.old`<br>
@@ -31,7 +36,7 @@
    `#deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security stretch/updates main contrib non-free`<br>
   * `sudo apt-get update`<br>
 
-7.Python库安装
+8.Python库安装
   * PyAudio: `sudo apt install python3-pyaudio`<br>
   * PyQt5: `sudo apt-get install python3-pyqt5`<br>
   * numpy: `sudo apt-get install python3-numpy`<br>
@@ -44,9 +49,9 @@
   * pydub: `sudo pip3 install pydub`(需ffmpeg支持，安装：`sudo apt-get install ffmpeg`) <br>
   * evdev: `sudp pip3 install evdev`<br>
 
-8.系统备份:`sudo dd if=/dev/sdc of=Desktop/respeaker.img bs=4MB`<br>
+9.系统备份:`sudo dd if=/dev/sdc of=Desktop/respeaker.img bs=4MB`<br>
 
-9.设置python程序自启动
+10.设置python程序自启动
 * 新增文件：`sudo vim /etc/systemd/system/rc-local.service`<br>
 	 文件内容<br>
  `[Unit]`<br>
