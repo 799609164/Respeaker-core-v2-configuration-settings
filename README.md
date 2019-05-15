@@ -6,13 +6,13 @@
  `sudo minicom -s`　选择`Serial port setup`进行配置<br>
  或者`sudo screen /dev/ttyACM*  115200`
 
-2.连接wifi： `sudo nmtui`
+2.连接wifi：`sudo nmtui`
 
-3.查看ip： `ip addr`
+3.查看ip：`ip addr`
 
 4.<br>`sudo apt-get update`<br> `sudo apt-get upgrade`
 
-5.更改系统时区： `sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime`
+5.更改系统时区：`sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime`
 
 6.修改主机名：<br>
 `sudo vim /etc/hosts`　添加　`127.0.0.1　localhsot 修改的主机名`<br>
@@ -23,7 +23,7 @@
   * `cd /etc/apt`<br>
   * `sudo cp -p sources.list sources.list.old`<br>
   * `sudo vim sources.list`<br>
-  * 将sources.list内容更换为:<br>
+  * 将sources.list内容更换为：<br>
   (在清华源网站上https://mirror.tuna.tsinghua.edu.cn/help/debian/ 找到对应版本的清华源)<br>
    `#默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释`<br>
    `deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main contrib non-free`<br>
@@ -37,19 +37,19 @@
   * `sudo apt-get update`<br>
 
 8.Python库安装
-  * PyAudio: `sudo apt install python3-pyaudio`<br>
-  * PyQt5: `sudo apt-get install python3-pyqt5`<br>
-  * numpy: `sudo apt-get install python3-numpy`<br>
-  * matplotlib: `sudo apt-get install python3-mayplotlib`<br>
-  * scipy: `sudo apt-get install python3-scipy`<br>
-  * sklearn: `sudo apt-get install python3-sklearn`<br>
-  * hmmlearn: `sudo pip3 install hmmlearn`<br>
-  * simplejson: `sudo apt-get install python3-simplejson`<br>
-  * eyed3: `sudo pip3 install eyed3`<br>
-  * pydub: `sudo pip3 install pydub`(需ffmpeg支持，安装：`sudo apt-get install ffmpeg`) <br>
-  * evdev: `sudp pip3 install evdev`<br>
+  * PyAudio：`sudo apt install python3-pyaudio`<br>
+  * PyQt5：`sudo apt-get install python3-pyqt5`<br>
+  * numpy：`sudo apt-get install python3-numpy`<br>
+  * matplotlib：`sudo apt-get install python3-mayplotlib`<br>
+  * scipy：`sudo apt-get install python3-scipy`<br>
+  * sklearn：`sudo apt-get install python3-sklearn`<br>
+  * hmmlearn：`sudo pip3 install hmmlearn`<br>
+  * simplejson：`sudo apt-get install python3-simplejson`<br>
+  * eyed3：`sudo pip3 install eyed3`<br>
+  * pydub：`sudo pip3 install pydub`(需ffmpeg支持，安装：`sudo apt-get install ffmpeg`) <br>
+  * evdev：`sudp pip3 install evdev`<br>
 
-9.系统备份:`sudo dd if=/dev/sdc of=Desktop/respeaker.img bs=4MB`<br>
+9.系统备份：`sudo dd if=/dev/sdc of=Desktop/respeaker.img bs=4MB`<br>
 
 10.设置python程序自启动
 * 新增文件：`sudo vim /etc/systemd/system/rc-local.service`<br>
@@ -68,7 +68,7 @@
  
 	`[Install]`<br>
 `WantedBy=multi-user.target`<br>
-* 新增文件:`sudo vim /etc/rc.local`<br>
+* 新增文件：`sudo vim /etc/rc.local`<br>
   文件内容<br>
  `#!/bin/sh -e`<br>
   `#`<br>
@@ -87,17 +87,17 @@
   `export PYTHONPATH=$PYTHONPATH:"/home/respeaker/model/pyAudioAnalysis"`<br>
   `exit 0`<br>
   
- * 添加权限:`sudo chmod +x /etc/rc.local`
- * 设置到系统启动:`sudo systemctl enable rc-local`
- * 启动脚本:`sudo systemctl start rc-local.service`
- * 查看服务状态:`sudo systemctl status rc-local.service`
+ * 添加权限：`sudo chmod +x /etc/rc.local`
+ * 设置到系统启动：`sudo systemctl enable rc-local`
+ * 启动脚本：`sudo systemctl start rc-local.service`
+ * 查看服务状态：`sudo systemctl status rc-local.service`
   
 # FAQs
 1.ssh连接失败：删除`/home/xy/.ssh/known_hosts`中的内容
 
 2.无法显示PyQt5界面：`ssh　respeaker@192.168.xxx.xxx -X`
 
-3.sudo python3情况下无法导入模块:<br>
+3.sudo python3情况下无法导入模块：<br>
   * `sudo vim /etc/sudoers`<br>
   * 注释掉`Defaults    env_reset`<br>
   * 添加<br>
